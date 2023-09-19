@@ -6,8 +6,8 @@
 //
 
 import KMMViewModelSampleShared
-
-class TimeTravelViewModel: KMMViewModelSampleShared.TimeTravelViewModel {
+ 
+class TimeTravelViewModelParent: KMMViewModelSampleShared.TimeTravelViewModel {
     
     @Published var isResetDisabled: Bool = false
     
@@ -16,4 +16,8 @@ class TimeTravelViewModel: KMMViewModelSampleShared.TimeTravelViewModel {
         guard isResetDisabled else { return }
         super.resetTime()
     }
+}
+
+class TimeTravelViewModel: TimeTravelViewModelParent{
+
 }
